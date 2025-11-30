@@ -105,7 +105,7 @@ Examples of REJECTED passwords:
 
 Examples of ACCEPTED passwords:
 - "Tr0ub4dor&3#xyz" - Mixed case, digits, special chars, unique
-- "MyS3cur3P@ssw0rd!" - Mixed case, digits, special chars, long enough
+- "Xk9$mN2vL@pQ7wZ!" - Mixed case, digits, special chars, no dictionary words
 """
 
 

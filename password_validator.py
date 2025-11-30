@@ -35,6 +35,10 @@ COMMON_WEAK_PASSWORDS = [
     "pass", "test", "guest", "root", "administrator",
 ]
 
+# Special characters pattern and display string
+SPECIAL_CHARS_PATTERN = r"[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>/?`~]"
+SPECIAL_CHARS_DISPLAY = "!@#$%^&*()_+-=[]{}|;':\",./<>?`~"
+
 
 class PasswordRequirements:
     """Password security requirements configuration."""
@@ -114,8 +118,8 @@ def validate_password(
     
     # Check for special character
     if requirements.require_special:
-        if not re.search(r"[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>/?`~]", password):
-            errors.append("Password must contain at least one special character (!@#$%^&*()_+-=[]{}|;':\",./<>?`~)")
+        if not re.search(SPECIAL_CHARS_PATTERN, password):
+            errors.append(f"Password must contain at least one special character ({SPECIAL_CHARS_DISPLAY})")
         else:
             strength_score += 15
     
